@@ -19,14 +19,11 @@ var config = new CsvConfiguration(CultureInfo.InvariantCulture)
     MissingFieldFound = null
 };
 
-using (var reader = new StreamReader("D:\\Kai-2\\CsvMemberParser\\CsvMemberParser\\UploadFile.csv"))
+using (var reader = new StreamReader("D:\\Kai-2\\CsvMemberParser\\CsvMemberParser\\CsvMemberParser\\UploadFile.csv"))
 using (var csv = new CsvReader(reader, config))
 {
-
-    // read the CSV file into a list of CsvRow objects
     List<CsvRow> rows = csv.GetRecords<CsvRow>().ToList();
 
-    // do something with the list of rows
     foreach (CsvRow row in rows)
     {
         // create member record
@@ -80,19 +77,6 @@ using (var csv = new CsvReader(reader, config))
                 });
             };
         }
-
-
-
-
-        // access the properties of the CsvRow object
-        //int id = row.Id;
-        //string name = row.Name;
-        //int age = row.Age;
-        //string email = row.Email;
-        //string phone = row.Phone;
-        //decimal salary = row.Salary;
-
-        // do something with the row data
     }
 
 
